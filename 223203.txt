@@ -1,0 +1,111 @@
+4. mkdir SI_2024_lab1_223203
+   cd SI_2024_lab1_223203
+   git init
+   Направен е директориум, во кој се иницијализира git.
+	
+5. git remote add origin https://github.com/MilanBornarov/SI_2024_lab1_223203
+   git remote - v
+   git config --global user.email "milan.bornarov1@gmail.com"
+   git config --global user.name "MilanBornarov"	
+   Се поврзува со remote repo, се проверува дали е добро остварена конекцијата и се додава корисничко име и е-адреса.
+	
+6. nano README.md
+   git add .
+   git commit -m "initial commit"
+   Додадена е README датотека со потпис: Милан Борнаров 223203
+   
+7. git add .
+   git commit -m "Add starter code"
+   Текстот од трите класи се додадени на локалниот репозиториум па се прави add и commit.
+   
+8. git push -u origin master
+   Се синхронизира (upstream) до одалечениот репозиториум.
+
+9. branch bug1
+   branch bug2
+   Направени 2 гранки без скокање на нив.
+   
+10. git checkout bug1
+    Префрлување на bug1.
+   
+11. nano SILab1_1.java
+    git commit -am "Fix wrong condition in filterOddLengthStrings"
+    Поправена грешка во SILab1_1.java, па направено е commit.
+							
+12. git checkout bug2
+    Префрлување на bug2.
+
+13. nano SILab1_2.java
+    git commit -am "Fix wrong condition in makeBigStringFrom"
+    Поправена грешка во SILab1_2.java, па направено е commit.
+
+14. git checkout bug1
+    Префрлување на bug1.
+
+15. nano SILab1Main.java
+    git commit -am "Call method filterOddLengthStrings in main class"
+    Додавање повик за filterOddLengthStrings, па направено е commit.
+    
+16. git checkout bug2
+    Префрлување на bug2
+
+17. nano SILab1Main.java
+    git commit -am "Call method makeBigStringFrom in main class"
+    Додавање повик за makeBigStringFrom, па направено е commit.
+
+18. git push --all origin
+    Синхронизирање на сите гранки.
+
+19. git checkout master
+    Префрлување на главна гранка.
+
+20. git merge bug1
+    Нема конфликт, употребен е Fast-forward методот. 
+    $ git merge bug1
+    Updating f805d9a..e799f3c
+    Fast-forward
+    SILab1Main.java | 1 +
+    SILab1_1.java   | 4 ++--
+    2 files changed, 3 insertions(+), 2 deletions(-)
+    
+21. git push --all origin
+    Синхронизирање на сите гранки.
+
+22. git checkout bug2
+    Префрлување на гранка bug2.
+
+23. git rebase master
+    Има конфликт во класата SILab1Main.java (CONFLICT (content): Merge conflict in SILab1Main.java)
+    nano SILab1Main.java
+    git add SILab1Main.java
+    git rebase --continue
+    Употребен е rebase merge.
+    
+24. git checkout master
+    Префрлување на главна гранка.
+
+25. git merge bug2
+    Нема конфликт, употребен е Fast-forward методот.
+    $ git merge bug2
+    Updating e799f3c..45703a9
+    Fast-forward
+    SILab1Main.java | 1 +
+    SILab1_2.java   | 4 ++--
+    2 files changed, 3 insertions(+), 2 deletions(-)
+
+26. git push --all origin
+    Синхронизирање на сите гранки.
+
+27. git push --all origin
+    git push --force bug2
+    Синхронизирање на сите гранки.
+    Проблем произлезе со гранката bug2, па направен е force push на самата.
+
+28. nano logs.txt
+    nano 223203.txt
+    git add .
+    git commit -am "Final commit"
+    Додадени 2 датотеки со текст, па направено е add и commit.
+    
+29. git push --all origin
+    Последна синхронизација.
